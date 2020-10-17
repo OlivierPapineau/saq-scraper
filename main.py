@@ -21,7 +21,6 @@ class Program:
 
         # Getting categories from scraper
         self.scraper = Scraper(self.language)
-        self.categories = self.scraper.get_categories()
 
         # Choosing category
         self.choose_category()
@@ -41,7 +40,7 @@ class Program:
 
     def choose_category(self):
         categories = list(
-            map(lambda item: item['category'], self.categories)
+            map(lambda item: item['category'], self.scraper.get_categories())
         )
 
         print('\n')
